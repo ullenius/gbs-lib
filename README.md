@@ -10,7 +10,7 @@ Game Boy Colour games. GBS stands for Game Boy Sound System.
 ## Features
 * :heavy_check_mark: 100% Java (Java 8) :coffee:
 * :heavy_check_mark: Supports UTF-8 encoding in the tags!
-* Implements `Comparable` for sorting out of the box!
+* Implements <code>Comparable</code> for sorting out of the box!
 
 ## How to use it
 
@@ -44,14 +44,28 @@ tag.setCopyright("2000 Nintendo");
 tag.setTitle("Wario Land 5");
 ```
 
+### Sorting tags
+```java
+List<GbsTag> myTags = new ArrayList<>();
+myTags.add("supermarioland");
+myTags.add("warioland3");
+myTags.sort(null); // That's it! :)
+```
+
+
 ## Development
 For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
 
 
 ## Changelog
+0.1 Cleaned up the code from <code>gbstag</code>.
+
+
 
 ## Licence
 LGPL 2.1
+
+See [COPYING](COPYING)
 
 ### Libraries and copyright
 * Image by [Flappiefh](https://fr.wikipedia.org/wiki/Utilisateur:Flappiefh) (2013) from Wikimedia Commons. [Creative Commons Attribution-Share-Alike 3.0 Unported licence](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
