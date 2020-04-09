@@ -6,8 +6,6 @@ import se.anosh.gbs.dao.GbsFileReader;
 import se.anosh.gbs.dao.GbsFileWriter;
 import se.anosh.gbs.dao.TagReader;
 import se.anosh.gbs.domain.GbsTag;
-import se.anosh.gbs.domain.ReadOnlyGbsTag;
-import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.domain.Tag;
 
 public class GbsFile implements Gbs {
