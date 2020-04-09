@@ -37,7 +37,7 @@ gbsfile.save();
 ### Setting tag values
 ```java
 Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
-SimpleGbsTag = gbsfile.getTag();
+SimpleGbsTag tag = gbsfile.getTag();
 
 tag.setAuthor("Koji Kondo");
 tag.setCopyright("2000 Nintendo");
@@ -47,9 +47,9 @@ tag.setTitle("Wario Land 5");
 ### Sorting tags
 ```java
 List<ReadOnlySimpleGbsTag> myTags = new ArrayList<>();
-myTags.add("superMarioLand");
-myTags.add("warioLand3");
-myTags.add("donkeyKongLand");
+myTags.add(superMarioLand);
+myTags.add(warioLand3);
+myTags.add(donkeyKongLand);
 myTags.sort(null); // That's it! :)
 ```
 
