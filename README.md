@@ -18,7 +18,7 @@ Game Boy Colour games. GBS stands for Game Boy Sound System.
 ```java
 
 Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
-GbsTag tag = gbsfile.getTag();
+Tag tag = gbsfile.getTag();
 
 System.out.println("Version number: " + tag.getVersionNumber());
 System.out.println("This gbs file contains: " + tag.getNumberOfSongs() + " songs");
@@ -37,7 +37,7 @@ gbsfile.save();
 ### Setting tag values
 ```java
 Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
-GbsTag tag = gbsfile.getTag();
+SimpleGbsTag = gbsfile.getTag();
 
 tag.setAuthor("Koji Kondo");
 tag.setCopyright("2000 Nintendo");
@@ -46,7 +46,7 @@ tag.setTitle("Wario Land 5");
 
 ### Sorting tags
 ```java
-List<GbsTag> myTags = new ArrayList<>();
+List<ReadOnlySimpleGbsTag> myTags = new ArrayList<>();
 myTags.add("superMarioLand");
 myTags.add("warioLand3");
 myTags.add("donkeyKongLand");
@@ -68,11 +68,11 @@ For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gb
 ### Interface-segregation principle
 There are a number of interfaces included for the <code>GbsTag</code> class.
 
-1. <code>ReadOnlyGbsTag</code>
-1. <code>ReadOnlyLowLevelGbsTag</code>
-1. <code>ReadOnlySimpleGbsTag</code>
-1. <code>SimpleGbsTag</code>
-1. <code>SimpleGbsTagReadOnlyLowLevel</code>
+1. <code>Tag</code> - read/write all tags. Reads low-level tags
+1. <code>LowLevel</code> - read only, low-level tags
+1. <code>ReadOnlyGbsTag</code> - read only, all tags
+1. <code>ReadOnlySimpleGbsTag</code> - read only author, title and copyright
+1. <code>SimpleGbsTag</code> - read/write author, title and copyright
 
 Please refer to the Javadocs provided for further details.
 
@@ -81,7 +81,6 @@ Please refer to the Javadocs provided for further details.
 ## Development
 For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
 
->>>>>>> 5c4d4f7ed6a5c4d8353e09e1a5c57c3188b5bacf
 ## Licence
 LGPL 2.1
 
