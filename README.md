@@ -14,7 +14,7 @@ Game Boy Colour games. GBS stands for Game Boy Sound System.
 
 ## How to use it
 
-###Opening a gbs file
+### Opening a gbs file
 ```java
 
 Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
@@ -29,12 +29,12 @@ System.out.println("Title:\t" + tag.getTitle());
 System.out.println("Copyright:\t" + tag.getCopyright())";
 ```
 
-###Saving a gbs file
+### Saving a gbs file
 ```java
 gbsfile.save();
 ```
 
-###Setting tag values
+### Setting tag values
 ```java
 Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
 GbsTag tag = gbsfile.getTag();
@@ -47,20 +47,14 @@ tag.setTitle("Wario Land 5");
 ### Sorting tags
 ```java
 List<GbsTag> myTags = new ArrayList<>();
-myTags.add("supermarioland");
-myTags.add("warioland3");
+myTags.add("superMarioLand");
+myTags.add("warioLand3");
+myTags.add("donkeyKongLand");
 myTags.sort(null); // That's it! :)
 ```
 
-
 ## Development
 For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
-
-
-## Changelog
-0.1 Cleaned up the code from <code>gbstag</code>.
-
-
 
 ## Licence
 LGPL 2.1
