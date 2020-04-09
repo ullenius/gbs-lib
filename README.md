@@ -58,8 +58,14 @@ This is a Maven project.
 
 To build simply run
 ```sh
-mvn
+mvn install
 ```
+
+To run the tests run
+```sh
+mvn test
+```
+
 
 
 ## Development
