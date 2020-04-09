@@ -1,5 +1,5 @@
 package se.anosh.gbs.domain;
 
-public interface ReadOnlyGbsTag extends ReadOnlySimpleGbsTag, ReadOnlyLowLevelGbsTag {
+public interface ReadOnlyGbsTag extends ReadOnlySimpleGbsTag, LowLevel {
 
 }

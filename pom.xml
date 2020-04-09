@@ -5,7 +5,7 @@
 	<groupId>se.anosh</groupId>
 	<artifactId>gbstag-lib</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mp3agic</name>
+	<name>gbslib</name>
 	<description>A java library for reading gbs files and manipulating gbs file tags</description> 
 	<url>https://github.com/ullenius/gbs-lib</url>
 

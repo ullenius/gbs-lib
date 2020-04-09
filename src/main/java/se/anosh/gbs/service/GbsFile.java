@@ -8,7 +8,7 @@ import se.anosh.gbs.dao.TagReader;
 import se.anosh.gbs.domain.GbsTag;
 import se.anosh.gbs.domain.ReadOnlyGbsTag;
 import se.anosh.gbs.domain.SimpleGbsTag;
-import se.anosh.gbs.domain.SimpleGbsTagReadOnlyLowLevel;
+import se.anosh.gbs.domain.Tag;
 
 public class GbsFile implements Gbs {
 
@@ -42,7 +42,7 @@ public class GbsFile implements Gbs {
 	}
 
 	@Override
-	public SimpleGbsTagReadOnlyLowLevel getTag() {
+	public Tag getTag() {
 		return tag;
 	}
 

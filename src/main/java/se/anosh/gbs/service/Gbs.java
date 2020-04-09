@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import se.anosh.gbs.domain.ReadOnlyGbsTag;
 import se.anosh.gbs.domain.SimpleGbsTag;
-import se.anosh.gbs.domain.SimpleGbsTagReadOnlyLowLevel;
+import se.anosh.gbs.domain.Tag;
 
 public interface Gbs {
 
-	SimpleGbsTagReadOnlyLowLevel getTag();
+	Tag getTag();
 
 	void save() throws IOException;
 	String getFileName();

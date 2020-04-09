@@ -15,7 +15,7 @@ import org.junit.Test;
 
 import se.anosh.gbs.domain.GbsTag;
 import se.anosh.gbs.domain.ReadOnlyGbsTag;
-import se.anosh.gbs.domain.ReadOnlyLowLevelGbsTag;
+import se.anosh.gbs.domain.LowLevel;
 import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
 import se.anosh.gbs.service.GbsFile;
@@ -28,7 +28,7 @@ public class TestModelWithData {
 
 	private Gbs gbsFile;
     private SimpleGbsTag tag;
-    private ReadOnlyLowLevelGbsTag readOnlyTag;
+    private LowLevel readOnlyTag;
     private static String FIRST_SAMPLE_FILE = "gbs/sample.gbs"; // Shantae
     private static String SECOND_SAMPLE_FILE = "gbs/sample2.gbs"; // DK Land2
     

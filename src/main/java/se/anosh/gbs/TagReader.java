@@ -2,9 +2,10 @@ package se.anosh.gbs;
 
 import java.io.IOException;
 
-import se.anosh.gbs.domain.ReadOnlyLowLevelGbsTag;
+import se.anosh.gbs.domain.LowLevel;
 import se.anosh.gbs.domain.ReadOnlySimpleGbsTag;
 import se.anosh.gbs.domain.SimpleGbsTag;
+import se.anosh.gbs.domain.Tag;
 import se.anosh.gbs.service.Gbs;
 import se.anosh.gbs.service.GbsFile;
 
@@ -28,14 +29,45 @@ public class TagReader {
 		tag.setAuthor("hej");
 		wario.save();
 		
-		ReadOnlyLowLevelGbsTag lowlevel = wario.getTag();
+		LowLevel lowlevel = wario.getTag();
 		System.out.println("First song: " + lowlevel.getFirstSong());
 		
 		ReadOnlySimpleGbsTag readOnly = wario.getTag();
-		
-		
-		
 
 	}
+	
+	/*
+	 * Code from the docs
+	 */
+	static void test() throws IOException {
+		
+		Gbs gbsfile = new GbsFile("/tmp/supermarioland.gbs");
+		Tag tag = gbsfile.getTag();
+		
+		printTags(tag);
+		printLowLevel(tag);
+		
+		Gbs anotherFile = new GbsFile("/tmp/metalgear2.gbs");
+		SimpleGbsTag metalgear = anotherFile.getTag();
+		metalgear.setAuthor("Norihiko Hibino, Kazuki Muraoka");
+		anotherFile.save();
+		
+		
+	}
+	
+	static void printTags(ReadOnlySimpleGbsTag tag) {
+		System.out.println("Author:\t" + tag.getAuthor());
+		System.out.println("Title:\t" + tag.getTitle());
+		System.out.println("Copyright:\t" + tag.getCopyright());
+	}
+	
+	
+	static void printLowLevel(LowLevel tag) {
+		System.out.println("The first one is no. " + tag.getFirstSong());
+		System.out.println("Version number: " + tag.getVersionNumber());
+		System.out.println("This gbs file contains: " + tag.getNumberOfSongs() + " songs");
+	}
+	
+	
 
 }

@@ -26,7 +26,7 @@ System.out.println("The first one is no. " + tag.getFirstSong());
 
 System.out.println("Author:\t" + tag.getAuthor());
 System.out.println("Title:\t" + tag.getTitle());
-System.out.println("Copyright:\t" + tag.getCopyright())";
+System.out.println("Copyright:\t" + tag.getCopyright());
 ```
 
 ### Saving a gbs file
@@ -53,8 +53,29 @@ myTags.add("donkeyKongLand");
 myTags.sort(null); // That's it! :)
 ```
 
+## Build
+This is a Maven project.
+
+To build simply run
+```sh
+mvn
+```
+
+
 ## Development
 For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
+
+### Interface-segregation principle
+There are a number of interfaces included for the <code>GbsTag</code> class.
+
+1. <code>ReadOnlyGbsTag</code>
+1. <code>ReadOnlyLowLevelGbsTag</code>
+1. <code>ReadOnlySimpleGbsTag</code>
+1. <code>SimpleGbsTag</code>
+1. <code>SimpleGbsTagReadOnlyLowLevel</code>
+
+Please refer to the Javadocs provided for further details.
+
 
 ## Licence
 LGPL 2.1
