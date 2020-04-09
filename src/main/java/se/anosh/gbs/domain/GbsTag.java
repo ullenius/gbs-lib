@@ -1,4 +1,4 @@
-package se.anosh.gbstag.domain;
+package se.anosh.gbs.domain;
 
 import java.util.Comparator;
 

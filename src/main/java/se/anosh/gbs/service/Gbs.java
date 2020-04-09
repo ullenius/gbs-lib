@@ -1,8 +1,8 @@
-package se.anosh.gbstag.service;
+package se.anosh.gbs.service;
 
 import java.io.IOException;
 
-import se.anosh.gbstag.domain.GbsTag;
+import se.anosh.gbs.domain.GbsTag;
 
 public interface Gbs {
 

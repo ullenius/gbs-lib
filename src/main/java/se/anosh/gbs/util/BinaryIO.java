@@ -1,4 +1,4 @@
-package se.anosh.gbstag.util;
+package se.anosh.gbs.util;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

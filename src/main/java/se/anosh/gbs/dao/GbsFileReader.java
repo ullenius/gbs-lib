@@ -1,4 +1,4 @@
-package se.anosh.gbstag.dao;
+package se.anosh.gbs.dao;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-import se.anosh.gbstag.domain.GbsTag;
-import se.anosh.gbstag.util.BinaryIO;
+import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.util.BinaryIO;
 
 public class GbsFileReader implements TagReader {
 	

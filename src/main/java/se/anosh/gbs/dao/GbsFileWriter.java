@@ -1,4 +1,6 @@
-package se.anosh.gbstag.dao;
+package se.anosh.gbs.dao;
+
+import static se.anosh.gbs.dao.GbsFileReader.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,10 +8,8 @@ import java.io.RandomAccessFile;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static se.anosh.gbstag.dao.GbsFileReader.*;
-
-import se.anosh.gbstag.domain.GbsTag;
-import se.anosh.gbstag.util.BinaryIO;
+import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.util.BinaryIO;
 
 public class GbsFileWriter implements AutoCloseable {
 

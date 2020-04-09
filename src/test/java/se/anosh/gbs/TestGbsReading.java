@@ -1,13 +1,13 @@
-package se.anosh.gbstag;
+package se.anosh.gbs;
 
 import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import se.anosh.gbstag.domain.GbsTag;
-import se.anosh.gbstag.service.Gbs;
-import se.anosh.gbstag.service.GbsFile;
+import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.service.Gbs;
+import se.anosh.gbs.service.GbsFile;
 
 @Deprecated
 public class TestGbsReading {

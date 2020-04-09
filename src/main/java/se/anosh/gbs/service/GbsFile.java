@@ -1,11 +1,11 @@
-package se.anosh.gbstag.service;
+package se.anosh.gbs.service;
 
 import java.io.IOException;
 
-import se.anosh.gbstag.dao.GbsFileReader;
-import se.anosh.gbstag.dao.GbsFileWriter;
-import se.anosh.gbstag.dao.TagReader;
-import se.anosh.gbstag.domain.GbsTag;
+import se.anosh.gbs.dao.GbsFileReader;
+import se.anosh.gbs.dao.GbsFileWriter;
+import se.anosh.gbs.dao.TagReader;
+import se.anosh.gbs.domain.GbsTag;
 
 public class GbsFile implements Gbs {
 
