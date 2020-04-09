@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.ReadOnlyGbsTag;
 import se.anosh.gbs.domain.ReadOnlyTagLowLevel;
 import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
@@ -27,7 +28,7 @@ public class TestModelWithData {
 
 	private Gbs gbsFile;
     private SimpleGbsTag tag;
-    private ReadOnlyTagLowLevel lowLevelTag;
+    private ReadOnlyTagLowLevel readOnlyTag;
     private static String FIRST_SAMPLE_FILE = "gbs/sample.gbs"; // Shantae
     private static String SECOND_SAMPLE_FILE = "gbs/sample2.gbs"; // DK Land2
     
@@ -36,7 +37,7 @@ public class TestModelWithData {
         
         gbsFile = new GbsFile(FIRST_SAMPLE_FILE);
         tag = gbsFile.getTag();
-        lowLevelTag = gbsFile.getLowLevelTag();
+        readOnlyTag = gbsFile.getReadOnlyTag();
     }
 	
     @Test
@@ -88,7 +89,7 @@ public class TestModelWithData {
         Gbs otherFile = new GbsFile(SECOND_SAMPLE_FILE);
         SimpleGbsTag other = otherFile.getTag();
         
-        List<GbsTag> myList = new ArrayList<>();
+        List<SimpleGbsTag> myList = new ArrayList<>();
         myList.add(other);
         myList.add(tag);
         myList.add(other);
@@ -132,8 +133,7 @@ public class TestModelWithData {
     public void testFileWithValidHeader() {
         
         // first 3 bytes of string should equal "GBS"
-    	ReadOnlyTagLowLevel lowLevel = tag;
-        final String headerWithoutVersionNumber = tag.getHeader();
+        final String headerWithoutVersionNumber = readOnlyTag.getHeader();
         assertEquals("GBS",headerWithoutVersionNumber); // case sensitive
     }
     
