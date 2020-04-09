@@ -77,6 +77,11 @@ There are a number of interfaces included for the <code>GbsTag</code> class.
 Please refer to the Javadocs provided for further details.
 
 
+=======
+## Development
+For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
+
+>>>>>>> 5c4d4f7ed6a5c4d8353e09e1a5c57c3188b5bacf
 ## Licence
 LGPL 2.1
 
