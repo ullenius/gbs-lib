@@ -1,6 +1,5 @@
 package se.anosh.gbs.dao;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Path;
@@ -36,7 +35,7 @@ public class GbsFileReader implements TagReader {
 	private final Path file;
 	private final RandomAccessFile raf;
 
-	public GbsFileReader(String filename) throws FileNotFoundException, IOException {
+	public GbsFileReader(String filename) throws IOException {
 		file = Paths.get(filename);
 		raf = new RandomAccessFile(file.toString(), READ_ONLY);
 		tags = new GbsTag();
@@ -52,7 +51,7 @@ public class GbsFileReader implements TagReader {
 		return (tags.getHeader().equals(CORRECT_HEADER));
 	}
 	
-	private void readAndSetAllFields() throws FileNotFoundException, IOException {
+	private void readAndSetAllFields() throws IOException {
 		// immutable tags
 		//readHeader(); // already set by isValidGbsFile
 		readVersionNumber();
