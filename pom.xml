@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mp3agic</name>
 	<description>A java library for reading gbs files and manipulating gbs file tags</description> 
-	<url>https://github.com/ullenius/gbstag-lib</url>
+	<url>https://github.com/ullenius/gbs-lib</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
