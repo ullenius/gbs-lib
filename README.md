@@ -89,6 +89,7 @@ See [COPYING](COPYING)
 
 Further reading:
 * [The perils of LGPLv3](https://nikmav.blogspot.com/2013/03/the-perils-of-lgplv3.html)
+* FSF [LGPL compatibility matrix](http://gplv3.fsf.org/dd3-faq#gpl-compat-matrix)
 
 ### Libraries and copyright
 * Image by [Flappiefh](https://fr.wikipedia.org/wiki/Utilisateur:Flappiefh) (2013) from Wikimedia Commons. [Creative Commons Attribution-Share-Alike 3.0 Unported licence](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
