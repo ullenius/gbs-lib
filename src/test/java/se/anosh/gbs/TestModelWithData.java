@@ -37,7 +37,7 @@ public class TestModelWithData {
         
         gbsFile = new GbsFile(FIRST_SAMPLE_FILE);
         tag = gbsFile.getTag();
-        readOnlyTag = gbsFile.getReadOnlyTag();
+        readOnlyTag = gbsFile.getTag();
     }
 	
     @Test

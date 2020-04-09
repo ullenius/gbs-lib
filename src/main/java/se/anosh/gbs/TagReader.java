@@ -20,19 +20,9 @@ import se.anosh.gbs.service.GbsFile;
 public class TagReader {
 
 	public static void main(String[] args) throws IOException {
-
-
-		Gbs wario = new GbsFile("/tmp/wario.gbs");
 		
-		SimpleGbsTag tag = wario.getTag();
-		System.out.println(tag);
-		tag.setAuthor("hej");
-		wario.save();
-		
-		LowLevel lowlevel = wario.getTag();
-		System.out.println("First song: " + lowlevel.getFirstSong());
-		
-		ReadOnlySimpleGbsTag readOnly = wario.getTag();
+		test();
+		editTags();
 
 	}
 	
@@ -47,13 +37,17 @@ public class TagReader {
 		printTags(tag);
 		printLowLevel(tag);
 		
+		editTags();
+		
+	}
+	
+	static void editTags() throws IOException {
 		Gbs anotherFile = new GbsFile("/tmp/metalgear2.gbs");
 		SimpleGbsTag metalgear = anotherFile.getTag();
 		metalgear.setAuthor("Norihiko Hibino, Kazuki Muraoka");
 		anotherFile.save();
-		
-		
 	}
+	
 	
 	static void printTags(ReadOnlySimpleGbsTag tag) {
 		System.out.println("Author:\t" + tag.getAuthor());
