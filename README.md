@@ -67,7 +67,6 @@ mvn test
 ```
 
 
-
 ## Development
 For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
 
@@ -80,12 +79,8 @@ There are a number of interfaces included for the <code>GbsTag</code> class.
 1. <code>ReadOnlySimpleGbsTag</code> - read only author, title and copyright
 1. <code>SimpleGbsTag</code> - read/write author, title and copyright
 
-Please refer to the Javadocs provided for further details.
-
-
-=======
-## Development
-For command-line or GUI programs see [gbstag](https://www.github.com/ullenius/gbstag) and [jbstag](https://www.github.com/ullenius/jbstag)
+### Documentation
+Please refer to the [Javadocs provided](https://ullenius.github.io/gbs-lib/) for further details.
 
 ## Licence
 LGPL 2.1
