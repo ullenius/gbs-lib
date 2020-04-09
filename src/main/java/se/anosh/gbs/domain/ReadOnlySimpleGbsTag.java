@@ -1,6 +1,6 @@
 package se.anosh.gbs.domain;
 
-public interface ReadOnlyTag {
+public interface ReadOnlySimpleGbsTag {
 
 	String getAuthor();
 	String getTitle();

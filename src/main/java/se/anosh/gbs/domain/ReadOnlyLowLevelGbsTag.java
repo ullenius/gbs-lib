@@ -1,6 +1,6 @@
 package se.anosh.gbs.domain;
 
-public interface ReadOnlyTagLowLevel {
+public interface ReadOnlyLowLevelGbsTag {
 
 	byte getVersionNumber();
 	int getNumberOfSongs();

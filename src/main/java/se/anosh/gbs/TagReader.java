@@ -2,6 +2,8 @@ package se.anosh.gbs;
 
 import java.io.IOException;
 
+import se.anosh.gbs.domain.ReadOnlyLowLevelGbsTag;
+import se.anosh.gbs.domain.ReadOnlySimpleGbsTag;
 import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
 import se.anosh.gbs.service.GbsFile;
@@ -22,11 +24,15 @@ public class TagReader {
 		Gbs wario = new GbsFile("/tmp/wario.gbs");
 		
 		SimpleGbsTag tag = wario.getTag();
-
 		System.out.println(tag);
+		tag.setAuthor("hej");
+		wario.save();
 		
-//		tag.setAuthor("hej");
-//		wario.save();
+		ReadOnlyLowLevelGbsTag lowlevel = wario.getTag();
+		System.out.println("First song: " + lowlevel.getFirstSong());
+		
+		ReadOnlySimpleGbsTag readOnly = wario.getTag();
+		
 		
 		
 
