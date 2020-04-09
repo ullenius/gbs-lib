@@ -5,7 +5,7 @@ import java.util.Comparator;
 /* Domain class for GBS-files 
  * 
  */
-public class GbsTag implements SimpleGbsTag, ReadOnlyTag, Comparable<GbsTag> {
+public class GbsTag implements SimpleGbsTag, ReadOnlyTag, ReadOnlyTagLowLevel, ReadOnlyGbsTag, Comparable<GbsTag> {
 	
 	// Thanks to Lukasz Wiktor @ stack overflow (2014)
     private static final Comparator<String> nullSafeStringComparator = Comparator.nullsFirst(String::compareToIgnoreCase);

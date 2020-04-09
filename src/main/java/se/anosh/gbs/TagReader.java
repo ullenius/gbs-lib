@@ -2,7 +2,7 @@ package se.anosh.gbs;
 
 import java.io.IOException;
 
-import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
 import se.anosh.gbs.service.GbsFile;
 
@@ -21,7 +21,7 @@ public class TagReader {
 
 		Gbs wario = new GbsFile("/tmp/wario.gbs");
 		
-		GbsTag tag = wario.getTag();
+		SimpleGbsTag tag = wario.getTag();
 
 		System.out.println(tag);
 		

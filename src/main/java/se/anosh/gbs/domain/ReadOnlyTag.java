@@ -6,10 +6,4 @@ public interface ReadOnlyTag {
 	String getTitle();
 	String getCopyright();
 	
-	public byte getVersionNumber();
-	public int getNumberOfSongs();
-	public int getFirstSong();
-	
-	public String getHeader();
-	
 }

@@ -6,6 +6,7 @@ import se.anosh.gbs.dao.GbsFileReader;
 import se.anosh.gbs.dao.GbsFileWriter;
 import se.anosh.gbs.dao.TagReader;
 import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.ReadOnlyGbsTag;
 
 public class GbsFile implements Gbs {
 
@@ -43,7 +44,5 @@ public class GbsFile implements Gbs {
 	public GbsTag getTag() {
 		return tag;
 	}
-	
-
 
 }

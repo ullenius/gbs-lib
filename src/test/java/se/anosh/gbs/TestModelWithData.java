@@ -14,6 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.ReadOnlyTagLowLevel;
+import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
 import se.anosh.gbs.service.GbsFile;
 
@@ -24,7 +26,8 @@ public class TestModelWithData {
 	}
 
 	private Gbs gbsFile;
-    private GbsTag tag;
+    private SimpleGbsTag tag;
+    private ReadOnlyTagLowLevel lowLevelTag;
     private static String FIRST_SAMPLE_FILE = "gbs/sample.gbs"; // Shantae
     private static String SECOND_SAMPLE_FILE = "gbs/sample2.gbs"; // DK Land2
     
@@ -33,12 +36,13 @@ public class TestModelWithData {
         
         gbsFile = new GbsFile(FIRST_SAMPLE_FILE);
         tag = gbsFile.getTag();
+        lowLevelTag = gbsFile.getLowLevelTag();
     }
 	
     @Test
     public void testIdenticalHashCodes() throws IOException {
         Gbs cloneFile = new GbsFile(FIRST_SAMPLE_FILE);
-        GbsTag clone = cloneFile.getTag();
+        SimpleGbsTag clone = cloneFile.getTag();
         
         System.out.println("tag = " + tag);
         System.out.println("clone = " + clone);
@@ -51,7 +55,7 @@ public class TestModelWithData {
     public void testNotIdenticalHashCodes() throws IOException {
         
         Gbs different = new GbsFile(SECOND_SAMPLE_FILE);
-        GbsTag differentGbsTag = different.getTag();
+        SimpleGbsTag differentGbsTag = different.getTag();
         
         assertNotSame(differentGbsTag,tag); // object references
         assertNotEquals(differentGbsTag,tag); // while we're at it
@@ -62,7 +66,7 @@ public class TestModelWithData {
     public void testEqualObjects() throws IOException {
         
         Gbs cloneFile = new GbsFile(FIRST_SAMPLE_FILE);
-        GbsTag clone = cloneFile.getTag();
+        SimpleGbsTag clone = cloneFile.getTag();
         
         assertNotSame(clone,tag); // no cheating
         assertEquals(clone.hashCode(),tag.hashCode()); // equal objects *MUST* have equals hashcodes
@@ -73,7 +77,7 @@ public class TestModelWithData {
     public void testNonEqualObjects() throws IOException {
         
          Gbs other = new GbsFile(SECOND_SAMPLE_FILE);
-         GbsTag dkland = other.getTag();
+         SimpleGbsTag dkland = other.getTag();
          
          assertNotEquals(dkland,tag);
     }
@@ -82,7 +86,7 @@ public class TestModelWithData {
     public void testComparableSorting() throws IOException {
         
         Gbs otherFile = new GbsFile(SECOND_SAMPLE_FILE);
-        GbsTag other = otherFile.getTag();
+        SimpleGbsTag other = otherFile.getTag();
         
         List<GbsTag> myList = new ArrayList<>();
         myList.add(other);
@@ -103,14 +107,14 @@ public class TestModelWithData {
     public void testComparableWithNullValues() throws IOException {
         
     	Gbs otherFile = new GbsFile(SECOND_SAMPLE_FILE); //accessing using the interface this time
-        GbsTag other = otherFile.getTag();
+    	SimpleGbsTag other = otherFile.getTag();
         
         other.setTitle(null);
         other.setAuthor(null);
         other.setCopyright(null);
         tag.setTitle(null);
         
-        List<GbsTag> myList = new ArrayList<>();
+        List<SimpleGbsTag> myList = new ArrayList<>();
         myList.add(tag);
         myList.add(other);
         
@@ -128,6 +132,7 @@ public class TestModelWithData {
     public void testFileWithValidHeader() {
         
         // first 3 bytes of string should equal "GBS"
+    	ReadOnlyTagLowLevel lowLevel = tag;
         final String headerWithoutVersionNumber = tag.getHeader();
         assertEquals("GBS",headerWithoutVersionNumber); // case sensitive
     }
