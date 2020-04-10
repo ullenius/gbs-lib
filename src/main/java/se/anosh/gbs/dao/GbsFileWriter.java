@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.ReadOnlySimpleGbsTag;
 import se.anosh.gbs.util.BinaryIO;
 
 public class GbsFileWriter implements AutoCloseable {
@@ -17,9 +17,9 @@ public class GbsFileWriter implements AutoCloseable {
 
 	private final Path file;
 	private RandomAccessFile raf;
-	private final GbsTag sourceTags;
+	private final ReadOnlySimpleGbsTag sourceTags;
 
-	public GbsFileWriter(String filename, GbsTag tags) throws FileNotFoundException {
+	public GbsFileWriter(String filename, ReadOnlySimpleGbsTag tags) throws FileNotFoundException {
 		file = Paths.get(filename);
 		sourceTags = tags;
 		raf = new RandomAccessFile(file.toString(), READ_WRITE);

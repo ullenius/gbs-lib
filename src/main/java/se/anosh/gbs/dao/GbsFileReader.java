@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 import se.anosh.gbs.domain.GbsTag;
+import se.anosh.gbs.domain.Tag;
 import se.anosh.gbs.util.BinaryIO;
 
 public class GbsFileReader implements TagReader {
@@ -101,7 +102,7 @@ public class GbsFileReader implements TagReader {
 	}
 
 	@Override
-	public GbsTag getTags() {
+	public Tag getTags() {
 		Objects.requireNonNull(tags, "tags cannot be null!");
 		return tags;
 	}
