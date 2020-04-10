@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import se.anosh.gbs.domain.ReadOnlySimpleGbsTag;
 import se.anosh.gbs.util.BinaryIO;
 
-public class GbsFileWriter implements AutoCloseable {
+public class GbsFileWriter implements TagWriter {
 
 	private static final String READ_WRITE = "rw";
 
