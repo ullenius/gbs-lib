@@ -2,10 +2,7 @@ package se.anosh.gbs.service;
 
 import java.io.IOException;
 
-import se.anosh.gbs.dao.GbsFileReader;
-import se.anosh.gbs.dao.GbsFileWriter;
-import se.anosh.gbs.dao.TagReader;
-import se.anosh.gbs.dao.TagWriter;
+import se.anosh.gbs.dao.*;
 import se.anosh.gbs.domain.Tag;
 
 public class GbsFile implements Gbs {

@@ -13,8 +13,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import se.anosh.gbs.domain.GbsTag;
-import se.anosh.gbs.domain.ReadOnlyGbsTag;
 import se.anosh.gbs.domain.LowLevel;
 import se.anosh.gbs.domain.SimpleGbsTag;
 import se.anosh.gbs.service.Gbs;
