@@ -1,6 +1,7 @@
 package se.anosh.gbs.domain;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 /* Domain class for GBS-files 
  * 
@@ -67,15 +68,16 @@ public class GbsTag implements SimpleGbsTag, ReadOnlySimpleGbsTag, LowLevel, Rea
 	
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((author == null) ? 0 : author.hashCode());
-		result = prime * result + ((copyright == null) ? 0 : copyright.hashCode());
-		result = prime * result + firstSong;
-		result = prime * result + numberOfSongs;
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
+		return Objects.hash(author, copyright, firstSong, numberOfSongs, title);
 	}
+	
+	@Override
+	public String toString() {
+		return "GbsTag [identifier=" + header + ", versionNumber=" + versionNumber + ", numberOfSongs=" + numberOfSongs
+				+ ", firstSong=" + firstSong + ", title=" + title + ", author=" + author + ", copyright=" + copyright
+				+ "]";
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -85,32 +87,9 @@ public class GbsTag implements SimpleGbsTag, ReadOnlySimpleGbsTag, LowLevel, Rea
 		if (getClass() != obj.getClass())
 			return false;
 		GbsTag other = (GbsTag) obj;
-		if (author == null) {
-			if (other.author != null)
-				return false;
-		} else if (!author.equals(other.author))
-			return false;
-		if (copyright == null) {
-			if (other.copyright != null)
-				return false;
-		} else if (!copyright.equals(other.copyright))
-			return false;
-		if (firstSong != other.firstSong)
-			return false;
-		if (numberOfSongs != other.numberOfSongs)
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		return true;
-	}
-	@Override
-	public String toString() {
-		return "GbsTag [identifier=" + header + ", versionNumber=" + versionNumber + ", numberOfSongs=" + numberOfSongs
-				+ ", firstSong=" + firstSong + ", title=" + title + ", author=" + author + ", copyright=" + copyright
-				+ "]";
+		return Objects.equals(author, other.author) && Objects.equals(copyright, other.copyright)
+				&& firstSong == other.firstSong && numberOfSongs == other.numberOfSongs
+				&& Objects.equals(title, other.title);
 	}
 	
 	@Override
