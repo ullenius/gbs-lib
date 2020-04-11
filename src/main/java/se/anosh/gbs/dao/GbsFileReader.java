@@ -2,8 +2,6 @@ package se.anosh.gbs.dao;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Objects;
 
 import se.anosh.gbs.domain.GbsTag;
@@ -33,12 +31,10 @@ public class GbsFileReader implements TagReader {
 	private static final String READ_ONLY = "r";
 	
 	private final GbsTag tags;
-	private final Path file;
 	private final RandomAccessFile raf;
 
 	public GbsFileReader(String filename) throws IOException {
-		file = Paths.get(filename);
-		raf = new RandomAccessFile(file.toString(), READ_ONLY);
+		raf = new RandomAccessFile(filename, READ_ONLY);
 		tags = new GbsTag();
 		
 		if (!isValidGbsFile())

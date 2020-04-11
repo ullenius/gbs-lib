@@ -5,8 +5,6 @@ import static se.anosh.gbs.dao.GbsFileReader.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import se.anosh.gbs.domain.ReadOnlySimpleGbsTag;
 import se.anosh.gbs.util.BinaryIO;
@@ -15,14 +13,12 @@ public class GbsFileWriter implements TagWriter {
 
 	private static final String READ_WRITE = "rw";
 
-	private final Path file;
 	private RandomAccessFile raf;
 	private final ReadOnlySimpleGbsTag sourceTags;
 
 	public GbsFileWriter(String filename, ReadOnlySimpleGbsTag tags) throws FileNotFoundException {
-		file = Paths.get(filename);
 		sourceTags = tags;
-		raf = new RandomAccessFile(file.toString(), READ_WRITE);
+		raf = new RandomAccessFile(filename, READ_WRITE);
 	}
 
 	@Override
