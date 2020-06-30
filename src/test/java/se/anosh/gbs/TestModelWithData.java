@@ -1,34 +1,23 @@
 package se.anosh.gbs;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
-import se.anosh.gbs.domain.LowLevel;
-import se.anosh.gbs.domain.SimpleGbsTag;
-import se.anosh.gbs.service.Gbs;
-import se.anosh.gbs.service.GbsFile;
+import se.anosh.gbs.domain.*;
+import se.anosh.gbs.service.*;
 
 public class TestModelWithData {
 	
-    public TestModelWithData() {
-		super();
-	}
-
 	private Gbs gbsFile;
     private SimpleGbsTag tag;
     private LowLevel readOnlyTag;
-    private static String FIRST_SAMPLE_FILE = "gbs/sample.gbs"; // Shantae
-    private static String SECOND_SAMPLE_FILE = "gbs/sample2.gbs"; // DK Land2
+    private final static String FIRST_SAMPLE_FILE = "gbs/sample.gbs"; // Shantae
+    private final static String SECOND_SAMPLE_FILE = "gbs/sample2.gbs"; // DK Land2
+    private final static String MAGIC_NUMBER = "GBS";
     
     @Before
     public void setup() throws IOException {
@@ -130,16 +119,14 @@ public class TestModelWithData {
     @Test
     public void testFileWithValidHeader() {
         
-        // first 3 bytes of string should equal "GBS"
         final String headerWithoutVersionNumber = readOnlyTag.getHeader();
-        assertEquals("GBS",headerWithoutVersionNumber); // case sensitive
+        assertEquals(MAGIC_NUMBER, headerWithoutVersionNumber);
     }
     
     @Test(expected=IOException.class)
-    public void testFileWithInvalidHeader() throws IOException {
-        // tests a file that is not a GBS
-        gbsFile = new GbsFile("gbs/randomBytes.gbs"); // will throw exception
-        
+    public void fileWithInvalidHeader() throws IOException {
+    	
+        gbsFile = new GbsFile("gbs/randomBytes.gbs");
     }
     
 	

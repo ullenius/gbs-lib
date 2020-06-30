@@ -1,7 +1,6 @@
 package se.anosh.gbs.dao;
 
-import java.io.Closeable;
-import java.io.IOException;
+import java.io.*;
 
 public interface TagWriter extends Closeable {
 	

@@ -1,11 +1,9 @@
 package se.anosh.gbs.dao;
 
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.util.Objects;
 
-import se.anosh.gbs.domain.GbsTag;
-import se.anosh.gbs.domain.Tag;
+import se.anosh.gbs.domain.*;
 import se.anosh.gbs.util.BinaryIO;
 
 public class GbsFileReader implements TagReader {

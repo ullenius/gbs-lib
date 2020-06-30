@@ -1,7 +1,6 @@
 package se.anosh.gbs.domain;
 
-import java.util.Comparator;
-import java.util.Objects;
+import java.util.*;
 
 /* Domain class for GBS-files 
  * 
